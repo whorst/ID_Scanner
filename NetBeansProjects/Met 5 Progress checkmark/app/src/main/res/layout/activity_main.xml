@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="@drawable/background">
+
+    <Button
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:id="@+id/settings"
+        android:layout_weight="0.50"
+        android:textStyle="bold|italic"
+        android:minHeight="60dp"
+        android:layout_below="@+id/syncedwithText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/syncedwithText"
+        android:layout_alignEnd="@+id/syncedwithText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sync"
+        android:id="@+id/Sync"
+        android:layout_gravity="left|bottom"
+        android:minWidth="100dp"
+        android:outlineProvider="background"
+        android:height="50dp"
+        android:fontFamily="@string/abc_action_bar_home_description"
+        android:clickable="true"
+        android:textStyle="bold|italic"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:minHeight="50dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:id="@+id/Start"
+        android:layout_gravity="right|bottom"
+        android:minWidth="100dp"
+        android:outlineProvider="background"
+        android:height="50dp"
+        android:fontFamily="@string/abc_action_bar_home_description"
+        android:clickable="true"
+        android:textStyle="bold|italic"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/practice"
+        android:layout_alignEnd="@+id/practice"
+        android:minHeight="50dp" />
+
+    <Button
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:text="Practice"
+        android:id="@+id/practice"
+        android:layout_weight=".50"
+        android:layout_gravity="right|top"
+        android:textStyle="bold|italic"
+        android:minHeight="60dp"
+        android:layout_below="@+id/syncedID"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/settings"
+        android:layout_toEndOf="@+id/settings" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bpmText"
+        android:text="BPM:"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textStyle="normal|bold"
+        android:textColor="#ffffff"
+        android:layout_above="@+id/Sync"
+        android:editable="false"
+        android:inputType="none" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editTxtBPM"
+        android:layout_toRightOf="@+id/bpmText"
+        android:text="100"
+        android:textStyle="bold"
+        android:numeric="integer"
+        android:layout_alignRight="@+id/settings"
+        android:layout_alignEnd="@+id/settings"
+        android:textColor="#ffffff"
+        android:layout_above="@+id/Sync"
+        android:visibility="visible"
+        android:width="3dp"
+        android:autoText="false" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/syncedwithText"
+        android:text="You are synced with:"
+        android:textStyle="bold|italic"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:inputType="none"
+        android:lines="1"
+        android:backgroundTint="#a1e5f6"
+        android:textColor="#ffffff"
+        android:editable="false" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName|none"
+        android:text="[syncedID=null]"
+        android:ems="10"
+        android:id="@+id/syncedID"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/syncedwithText"
+        android:lines="1"
+        android:backgroundTint="#a1e5f6"
+        android:textColor="#cfcfcf"
+        android:editable="false" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PlayStop"
+        android:id="@+id/btnPlay"
+        android:layout_centerHorizontal="true"
+        android:textOff="Play"
+        android:textOn="Stop"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/Sync"
+        android:allowUndo="true"
+        android:checked="false" />
+
+</RelativeLayout>
