@@ -1,0 +1,101 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Historic {
+
+	public static void main(String[] args) throws FileNotFoundException {
+
+		File event = new File("events.txt");
+
+		Scanner in = new Scanner(event);
+		
+	
+		
+
+		int[] Array1 = new int[89];
+		int[] Array2 = { 1892 };
+
+		int count = input(in, Array1);
+
+		int size = Array1.length + Array2.length;
+
+		int[] Array3 = new int[size];
+
+		sort(Array1, count);
+		for (int i = 0; i < count; i++) {
+			// print out all values of the array
+			System.out.println(Array1[i]);
+		}
+		sort(Array1, count);
+		for (int i = 0; i < 1; i++) {
+			if (!Array1.equals(1892)) {
+				System.out.println("The founding of CMU was not an important event apparently!");
+			}
+		}
+		System.arraycopy(Array1, 0, Array3, 0, Array1.length);
+		System.arraycopy(Array2, 0, Array3, Array1.length, Array2.length);
+
+		sort2(Array3, size);
+		for (int i = 0; i < size; i++) {
+			// print out all values of the array
+			System.out.println(Array3[i]);
+		}
+	}
+
+	public static int input(Scanner in, int[] Array1) {
+		int count = 0;
+		while (in.hasNext()) {
+			Array1[count++] = in.nextInt();
+		}
+		return count;
+	}
+
+	public static int[] sort(int[] anArray, int count) {
+		for (int i = 0; i < count - 1; i++) {
+			// i is the base variable. -1 ensures you don't step out of array.
+			// next number as the base
+			for (int j = i + 1; j < count; j++) {
+				// array.length is one more than the maximum value of the array.
+				if (anArray[i] < anArray[j]) {
+					int temp = anArray[j];
+					anArray[j] = anArray[i];
+					anArray[i] = temp;
+
+				}
+			}
+		}
+		return anArray;
+	}
+
+	public static int[] sort2(int[] anArray1, int count) {
+		for (int i = 0; i < count - 1; i++) {
+			// i is the base variable. -1 ensures you don't step out of array.
+			// next number as the base
+			for (int j = i + 1; j < count; j++) {
+				// array.length is one more than the maximum value of the array.
+				if (anArray1[i] < anArray1[j]) {
+					int temp = anArray1[j];
+					anArray1[j] = anArray1[i];
+					anArray1[i] = temp;
+
+				}
+			}
+		}
+		return anArray1;
+
+	}
+	public static int input1(Scanner in, int[] Array3) {
+		int count = 0;
+		while (in.hasNext()) {
+			Array3[count++] = in.nextInt();
+		}
+		return count;
+	}
+
+	
+}
+
+// array copy, temp, printwriter

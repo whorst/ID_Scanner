@@ -1,0 +1,30 @@
+Account "Tom":
+	First name: Tom
+	Last name: Smith
+	PIN: 1234
+	Balance: 300.0$
+
+Account "Tim":
+	First name: Tim
+	Last name: Smith
+	PIN: 2341
+	Balance: 400.0$
+
+Account "Sam":
+	First name: Sam
+	Last name: Smith
+	PIN: 3412
+	Balance: 500.0$
+
+Account "Sam":
+	First name: Sam
+	Last name: Smith
+	PIN: 3412
+	Balance: 500.0$
+
+Account "Dan":
+	First name: Dan
+	Last name: Smith
+	PIN: 5678
+	Balance: 1000.0$
+

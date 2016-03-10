@@ -1,0 +1,10 @@
+
+public class tet {
+
+	public static void main(String[] args) {
+		char a = 99;
+		char c = 97;
+		System.out.println('a' + 'c');
+
+}
+}

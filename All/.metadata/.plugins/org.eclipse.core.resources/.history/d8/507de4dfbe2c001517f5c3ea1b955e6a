@@ -1,0 +1,23 @@
+package bin;
+
+import javax.swing.JApplet;
+import java.awt.Color;
+import java.awt.Rectangle;
+import java.awt.Dimension;
+
+public class gui extends JApplet {
+
+	/**
+	 * Create the applet.
+	 */
+	public gui() {
+		getContentPane().setMinimumSize(new Dimension(100, 100));
+		getContentPane().setPreferredSize(new Dimension(1440, 1440));
+		getContentPane().setSize(new Dimension(1440, 1440));
+		getContentPane().setBounds(new Rectangle(1200, 1200, 1200, 1200));
+		getContentPane().setBackground(Color.YELLOW);
+		getContentPane().setLayout(null);
+
+	}
+
+}

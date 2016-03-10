@@ -1,0 +1,60 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.SystemColor;
+
+
+public class GUI {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					GUI window = new GUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public GUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(220, 20, 60));
+		frame.setBounds(100, 100, 1080, 812);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JPanel BeginningScreen = new JPanel();
+		BeginningScreen.setBackground(new Color(255, 215, 0));
+		frame.getContentPane().add(BeginningScreen, BorderLayout.NORTH);
+		
+		JPanel MenuScreen = new JPanel();
+		MenuScreen.setBackground(new Color(255, 215, 0));
+		frame.getContentPane().add(MenuScreen, BorderLayout.SOUTH);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(220, 20, 60));
+		frame.getContentPane().add(panel_2, BorderLayout.CENTER);
+	}
+
+}

@@ -1,0 +1,90 @@
+    // A task for reading and deleting an int from the buffer
+    public class child extends HappyMom implements Runnable
+    {
+        private static room CookiePlate = new room();
+
+        @SuppressWarnings("deprecation")
+        public void run()
+        {
+            
+            
+            
+            try
+            {
+                while (true)
+                {
+                	if(Thread.currentThread().getName().equals("Thread-1")){
+          				System.out.println("Adam Wants to enter the room ... ");
+          			}
+                	if(Thread.currentThread().getName().equals("Thread-2")){
+                        System.out.println("Bob Wants to enter the room ... ");
+                        }
+                	 if(Thread.currentThread().getName().equals("Thread-3")){
+                      	System.out.println("Caroline Wants to enter the room ... ");
+                      }
+                	if(Thread.currentThread().getName().equals("Thread-4")){
+                     	System.out.println("Darcy Wants to enter the room ... ");
+                     }
+                    
+                  
+          		
+                    
+                    if(Thread.currentThread().getName().equals("Thread-4")){
+                        int Temp= CookiePlate.eatcookies();
+                        Cookiesdarcy+=Temp;
+                       
+                        
+                        if(Cookiesdarcy >=20){
+                            Darcy.stop();
+                        }
+                    }
+                    if(Thread.currentThread().getName().equals("Thread-3")){
+                        int Temp= CookiePlate.eatcookies();
+                        CookiesCaroline+=Temp;
+                        
+                        
+                        if(CookiesCaroline >=20){
+                            Caroline.stop();
+                        }
+                    }
+                    if(Thread.currentThread().getName().equals("Thread-2")){
+                        int Temp= CookiePlate.eatcookies();
+                        CookiesBob+=Temp;
+                        
+                        
+                        if(CookiesBob >=20){
+                            Bob.stop();
+                        }
+                    }
+                    if(Thread.currentThread().getName().equals("Thread-1")){
+                        int Temp= CookiePlate.eatcookies();
+                        CookiesAdam+=Temp;
+                       
+                        
+                        if(CookiesAdam >=20){
+                            Adam.stop();
+                        }
+                    }
+                   
+                    if(Thread.currentThread().getName().equals("Thread-4")){
+                     	System.out.println("Child (Darcy): Going out to play ... ");
+                     }
+                     if(Thread.currentThread().getName().equals("Thread-3")){
+                     	System.out.println("Child (Caroline): Going out to play ... ");
+                     }
+                     if(Thread.currentThread().getName().equals("Thread-2")){
+                     	System.out.println("Child(Bob): Going out to play ... ");
+                     }
+          			if(Thread.currentThread().getName().equals("Thread-1")){
+          				System.out.println("Child (Adam): Going out to play ... ");
+          			}
+                	
+                    Thread.sleep((int) (Math.random() * 1000));
+                }
+            }
+            catch (InterruptedException ex)
+            {
+                ex.printStackTrace();
+            }
+        }
+    }

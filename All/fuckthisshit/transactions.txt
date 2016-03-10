@@ -1,0 +1,11 @@
+02/06/15 23:02:42	Bank account "Tom" created
+02/06/15 23:02:42	Bank account "Tim" created
+02/06/15 23:02:42	Bank account "Sam" created
+02/06/15 23:02:42	Bank account "Ben" created
+02/06/15 23:02:42	Bank account "Dan" created
+02/06/15 23:02:42	50.5 $ withdrawn from "Dan"
+02/06/15 23:02:42	50.5$ were deposited in the account "Tim"
+02/06/15 23:02:42	Account balance of account "Dan" inquired. Current account balance: 949.5 $
+02/06/15 23:02:42	Withdrawal from account "Tom" failed
+02/06/15 23:02:42	Wrong PIN entered for account "Sam"
+02/06/15 23:02:42	60.0$ were deposited in the account "Ben"

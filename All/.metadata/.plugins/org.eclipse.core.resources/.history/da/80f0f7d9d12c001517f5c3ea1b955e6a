@@ -1,0 +1,66 @@
+package bin;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Rectangle;
+import javax.swing.border.MatteBorder;
+import java.awt.Color;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.JLabel;
+import com.jgoodies.forms.factories.DefaultComponentFactory;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
+import java.awt.SystemColor;
+
+public class gui extends JFrame {
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					gui frame = new gui();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public gui() {
+		
+		int height;
+		int width;
+		
+		setResizable(false);
+		setBackground(SystemColor.window);
+		setBounds(new Rectangle(1400, 1400, 1400, 1400));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, height = 904, width = 815);
+		JPanel contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setBorder(null);
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel label = DefaultComponentFactory.getInstance().createLabel("");
+		label.setIcon(new ImageIcon("C:\\Users\\Willy\\Desktop\\back.PNG"));
+		label.setBounds(0, 0, height, width);
+		contentPane.add(label);
+	}
+}

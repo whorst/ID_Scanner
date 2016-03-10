@@ -1,0 +1,8 @@
+
+public class tet {
+
+	public static void main(String[] args) {
+		System.out.println(Math.floor(5.5));
+	}
+
+}

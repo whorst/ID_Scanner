@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+
+public class Ch6 {
+	public static void main(String[] args){
+
+		Scanner input = new Scanner(System.in);	
+String message = "Welcome to java";
+
+char ting = (message.charAt(0));
+System.out.println(ting);
+		
+	}
+
+}

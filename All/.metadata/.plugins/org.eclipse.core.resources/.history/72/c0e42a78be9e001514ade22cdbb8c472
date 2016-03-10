@@ -1,0 +1,219 @@
+import java.util.Random;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+    public class room extends HappyMom
+    {
+    	 protected static Lock lock = new ReentrantLock();
+         protected static Semaphore ticket = new Semaphore(2);
+         
+         private static room CookiePlate = new room();
+
+         
+         protected static Condition FirstLock = lock.newCondition();
+         protected static Condition SecondLock = lock.newCondition();
+         protected static Condition ThirdLock = lock.newCondition();
+         protected static Condition FourthLock = lock.newCondition();
+         protected static Condition mom = lock.newCondition();
+         
+         boolean firstCondition=false;
+         boolean secondCondition=false;
+         boolean thirdCondition=false;
+         boolean fourthCondition=false;
+         
+        private static final int CAPACITY = 10; 
+        private java.util.LinkedList<Integer> thePlate = new java.util.LinkedList<Integer>();
+        int numofkids=0;
+
+        
+       
+
+        public int putCookies(int cookieAmount)
+        {
+            int num =0;
+            int cookiesMade=0;
+            int cookiesAdded=0;
+           
+           lock.lock(); 
+            try
+            {
+            	System.out.println("Mom Enters the room. " + numofkids + " Children and " + thePlate.size() + " Cookies are in the room");
+           
+                
+                while(thePlate.size() <10){
+                    num++;
+                    cookiesMade++;
+                    thePlate.offer(cookiesAdded);
+                }
+                
+               
+                System.out.println("Mom cookiesMade: "+cookiesMade+" Cookies.");
+                cookiesMade=0;
+                
+                if(fourthCondition==true){
+                	
+                	fourthCondition=false;
+                	FourthLock.signal();
+                 }
+                if(thirdCondition==true){
+                	
+                	thirdCondition=false;
+                	ThirdLock.signal();
+                 }
+                if(secondCondition==true){
+                	
+                	secondCondition=false;
+                	SecondLock.signal();
+                 }
+                if(firstCondition==true){
+                	
+                	firstCondition=false;
+                	FirstLock.signal();
+                 }
+                
+                
+            }
+            
+            finally
+            {
+            	
+               lock.unlock(); 
+               System.out.println("Cookies on the CookiePlate " + thePlate.size());
+            }
+            
+            return num;
+        }
+
+        @SuppressWarnings("finally")
+        public int eatcookies()
+        {
+            Random random = new Random();
+            
+            int cookieAmount = Math.abs(random.nextInt(10 - 1 + 1) + 1);
+            if(Thread.currentThread().getName().equals("Thread-4")){
+            	System.out.println("Child (Darcy) Wants to eat " + cookieAmount + " Cookies");
+            }
+            if(Thread.currentThread().getName().equals("Thread-3")){
+            	System.out.println("Child (Caroline) Wants to eat " + cookieAmount + " Cookies");
+            }
+            if(Thread.currentThread().getName().equals("Thread-2")){
+            	System.out.println("Child (Bob) Wants to eat " + cookieAmount + " Cookies");
+            }
+ 			if(Thread.currentThread().getName().equals("Thread-1")){
+ 				System.out.println("Child (Adam) Wants to eat " + cookieAmount + " Cookies");
+ 			}
+            
+ 			
+            int eating=0;
+        
+        
+            try
+            {
+                
+                ticket.acquire(); 
+                numofkids++;
+                if(Thread.currentThread().getName().equals("Thread-4")){
+                	 
+                	 System.out.println("Child (Darcy) Enters the room now " + numofkids + " Children and " + thePlate.size() + " Cookies are in the room");
+                }
+                if(Thread.currentThread().getName().equals("Thread-3")){
+                	
+                	 System.out.println("Child (Caroline) Enters the room now " + numofkids + " Children and " + thePlate.size() + " Cookies are in the room");
+                }
+                if(Thread.currentThread().getName().equals("Thread-2")){
+                	 System.out.println("Child (Bob) Enters the room now " + numofkids + " Children and " + thePlate.size() + " Cookies are in the room");
+                }
+     			if(Thread.currentThread().getName().equals("Thread-1")){
+     			
+     				System.out.println( "Child (Adam) Enters the room now " + numofkids + " Children and " + thePlate.size() + " Cookies are in the room");     			
+     			}
+                
+                
+                while (thePlate.isEmpty()||thePlate.size() < cookieAmount)
+                {
+                    
+                    if(Thread.currentThread().getName().equals("Thread-4")){
+                    	lock.lock();
+                    	fourthCondition=true;
+                     	System.out.println("Darcy: There's not enough fore everyone. Hold on ");
+                     	mom.signal(); 
+                     	FourthLock.await();
+                     	
+                     }
+                     if(Thread.currentThread().getName().equals("Thread-3")){
+                    	 lock.lock();
+                    	 thirdCondition=true;
+                     	System.out.println("Caroline: There's not enough fore everyone. Hold on");
+                     	mom.signal();
+                     	ThirdLock.await();
+                     	
+                     }
+                     if(Thread.currentThread().getName().equals("Thread-2")){
+                    	 lock.lock();
+                    	 secondCondition=true;
+                     	System.out.println("Child(Bob): There's not enough fore everyone. Hold on");
+                     	mom.signal(); 
+                     	SecondLock.await();
+                     	
+                     }
+          			if(Thread.currentThread().getName().equals("Thread-1")){
+          				lock.lock();
+          				firstCondition=true;
+          				mom.signal(); 
+          				FirstLock.await();
+          				
+          				System.out.println("Child (Adam): There's not enough fore everyone. Hold on ");
+          			}
+          			
+                 lock.unlock();
+                    
+                }
+                
+                
+                	
+                	while(cookieAmount> 0 && thePlate.size()>0){
+                    cookieAmount--;
+                    eating++;
+                    thePlate.remove();
+                	}
+                	numofkids--;
+                    if(Thread.currentThread().getName().equals("Thread-4")){
+                 	  
+                 	 System.out.println("Child (Darcy): ate "+eating+" cookies.");
+                    	 System.out.println("Child (Darcy) Leaves the room now " + numofkids + " Children and " + thePlate.size() + " Cookies are in the room");
+                    }
+                    if(Thread.currentThread().getName().equals("Thread-3")){
+                 	   
+                 	   System.out.println("Child (Caroline): ate "+eating+" cookies.");
+                    	 System.out.println("Child (Caroline) Leaves the room now " + numofkids + " Children and " + thePlate.size() + " Cookies are in the room");
+                    }
+                    if(Thread.currentThread().getName().equals("Thread-2")){
+                 	   
+                 	   System.out.println("Child (Bob): ate "+eating+" cookies.");
+                    	 System.out.println("Child (Bob) Leaves the room now " + numofkids + " Children and " + thePlate.size() + " Cookies are in the room");
+                    }
+                    if(Thread.currentThread().getName().equals("Thread-1")){
+                 	   
+                 	   System.out.println("Child (Adam): ate "+eating+" cookies.");
+         				System.out.println("Child (Adam) Leaves the room now " + numofkids + " Children and " + thePlate.size() + " Cookies are in the room");     			
+         			}
+                    
+               
+                
+                
+            }
+            catch (InterruptedException ex)
+            {
+                ex.printStackTrace();
+            }
+            finally
+            {
+            	
+              
+                ticket.release(); // Return the room key
+                return eating;
+            }
+        }
+    }

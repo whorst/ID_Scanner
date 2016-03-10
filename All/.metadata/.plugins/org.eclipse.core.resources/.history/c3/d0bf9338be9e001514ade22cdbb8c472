@@ -1,0 +1,46 @@
+import java.util.Random;
+import java.util.concurrent.*;
+import java.util.concurrent.locks.*;
+
+public class HappyMom
+{
+    static Thread mom =new Thread(new mom());
+    static Thread Adam =new Thread(new child());
+    static Thread Bob =new Thread(new child());
+    static Thread Caroline =new Thread(new child());
+    static Thread Darcy =new Thread(new child());
+    
+    static int CookiesBob=0;
+    static int CookiesAdam=0;
+    static int CookiesCaroline=0;
+    static int Cookiesdarcy=0;
+    static int Cookiesmom=0;
+
+    
+    private static room CookiePlate = new room();
+
+    public static void main(String[] args)
+    {
+    System.out.println("main () of HappyMom. Create and run threads(1 mom and 4 children)");
+    mom.start();
+    Adam.start();
+    Bob.start();
+    Caroline.start();
+    Darcy.start();
+    
+    
+        
+    }
+public static void stats(Boolean CookiesEaten){
+    if(CookiesEaten=true){
+    	System.out.println("Mom cookiesMade a total of : " + Cookiesmom + " Cookies");
+    	 System.out.println("Bob Ate: " + CookiesBob + " Cookies");
+    	 System.out.println("Adam Ate: " + CookiesAdam + " Cookies");
+    	 System.out.println("Caroline Ate: " + CookiesCaroline + " Cookies");
+    	 System.out.println("Darcy Ate: " + Cookiesdarcy + " Cookies");
+        }
+}
+
+     
+
+}

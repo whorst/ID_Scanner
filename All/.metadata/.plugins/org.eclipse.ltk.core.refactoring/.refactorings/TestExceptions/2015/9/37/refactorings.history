@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;TestExceptions/Age.txt.txt&apos; to &apos;Age.txt&apos;" description="Rename resource &apos;Age.txt.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Age.txt.txt" name="Age.txt" stamp="1441914486052" updateReferences="true"/>
+</session>
