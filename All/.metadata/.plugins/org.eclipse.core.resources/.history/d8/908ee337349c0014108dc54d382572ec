@@ -1,0 +1,59 @@
+/*Will Horst
+ * This Program will calculate one's future investment value by allowing one to
+ * enter in certain values*/
+import java.util.Scanner;
+
+
+public class FinanceProjectActual {
+	public static void main(String[] args) {
+		
+		Scanner keyboard = new Scanner (System.in); //This line of code allows anyone to begin entering variables.
+	
+		double investment_amount, annual_interest_rate, future_investment; //This line turns investment amount, interest rate, and future investment into a double data type
+		int number_of_years; //This line turns number of years into an integer data type
+	  
+		
+		System.out.println("Enter investment amount: "); // The next six lines of code allow one to enter values for each variable, giving each value a prompt beforehand.
+		investment_amount = keyboard.nextDouble();
+		
+		System.out.println("Enter annual interest rate: ");
+		annual_interest_rate = keyboard.nextDouble();
+		
+		number_of_years=keyboard.nextInt();
+		number_of_years=keyboard.nextInt();
+		number_of_years=keyboard.nextInt();
+		number_of_years=keyboard.nextInt();
+		number_of_years=keyboard.nextInt();
+		number_of_years=keyboard.nextInt();
+		number_of_years=keyboard.nextInt();
+		number_of_years=keyboard.nextDouble();
+		x =keyboard.nextDouble();
+		y=keyboard.nextDouble();
+		bing = keyboard.nextDouble();
+		k =keyboard.nextDouble();
+		Scanner keyboard = new Scanner (System.in);
+		hi =keyboard.nextDouble();
+		Scanner keyboard = new Scane (System.in);
+		Scanner keyboard = new Scanner (System.in)Scanner keyboard =new Scanner (System.in);
+		Scanner keyboard = new Scanner(System.in);
+		
+			
+		
+		System.out.println("Enter number of years: ");
+		number_of_years = keyboard.nextInt();
+		
+	    future_investment = ( (int)investment_amount * Math.pow ((1.0 + (annual_interest_rate/12) * .01 ), number_of_years * 12)) ; //This line allows one to get their initial future investment amount.
+				
+				
+		System.out.printf("Your future investment amount is " + Math.round(100*future_investment)/((double)100)); //This line rounds and prints your total.
+	
+						}
+				}
+/*What is your investment amount?
+1000
+What is your annual interest rate?
+4.25
+//How many years?
+1
+Your future investment amount is 1043.34*/
+

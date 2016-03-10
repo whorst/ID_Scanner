@@ -1,0 +1,18 @@
+package bin;
+
+import javax.swing.JApplet;
+import java.awt.Color;
+import java.awt.Rectangle;
+
+public class gui extends JApplet {
+
+	/**
+	 * Create the applet.
+	 */
+	public gui() {
+		getContentPane().setBounds(new Rectangle(1200, 1200, 1200, 1200));
+		getContentPane().setBackground(Color.YELLOW);
+
+	}
+
+}

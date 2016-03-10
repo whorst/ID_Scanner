@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;calc.java&apos; to &apos;CPS240(1)&apos;&#x0D;&#x0A;- Original project: &apos;CPS240(9.1)&apos;&#x0D;&#x0A;- Destination element: &apos;CPS240(1)&apos;&#x0D;&#x0A;- Original element: &apos;calc.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=CPS240\(1)" element1="/src&lt;{calc.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1449511418048" units="1" version="1.0"/>
+</session>

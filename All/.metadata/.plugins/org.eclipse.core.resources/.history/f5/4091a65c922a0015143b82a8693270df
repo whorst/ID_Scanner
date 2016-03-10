@@ -1,0 +1,74 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.SystemColor;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.FlowLayout;
+import javax.swing.JTextArea;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import javax.swing.JPasswordField;
+import javax.swing.border.LineBorder;
+
+
+public class GUI {
+
+	private JFrame frame;
+	private JTextField txtPasswordKeeper;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					GUI window = new GUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public GUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(60, 179, 113));
+		frame.setBounds(100, 100, 1080, 812);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
+		panel_1.setBackground(new Color(255, 255, 255));
+		panel_1.setBounds(111, 22, 825, 740);
+		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		txtPasswordKeeper = new JTextField();
+		txtPasswordKeeper.setForeground(new Color(60, 179, 113));
+		txtPasswordKeeper.setFont(new Font("Lucida Calligraphy", Font.BOLD | Font.ITALIC, 76));
+		txtPasswordKeeper.setBounds(10, 8, 805, 110);
+		txtPasswordKeeper.setText("Password Keeper");
+		panel_1.add(txtPasswordKeeper);
+		txtPasswordKeeper.setColumns(10);
+	}
+}

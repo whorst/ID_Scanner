@@ -1,0 +1,5 @@
+Path,Lines of code,Lines of code generated,Lines of user code, Percentage of generated code
+/Sounds,26,26,0,"100.00"
+/Sounds/.settings,11,11,0,"100.00"
+/Sounds/bin/metronome/metronome,90,90,0,"100.00"
+/Sounds/src/metronome/metronome,181,181,0,"100.00"

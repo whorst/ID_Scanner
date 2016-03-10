@@ -1,0 +1,1 @@
+1.0 1.0  1.0The perimeter of the triangle (1.0, 1.0, 1.0,) is: 3.01.0 2.0  3.0

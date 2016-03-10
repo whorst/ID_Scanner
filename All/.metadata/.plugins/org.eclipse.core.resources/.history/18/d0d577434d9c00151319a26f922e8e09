@@ -1,0 +1,34 @@
+
+public class HappyMom {
+
+	
+	Runnable Adam = new Thread();
+	Runnable Bob = new Thread();
+	Runnable Caroline = new Thread();
+	Runnable Darcy = new Thread();
+	Runnable Mom = new Thread();
+	
+
+
+
+
+	
+	public static void main(String[] args) {
+			int plate  = 2;
+			
+			System.out.println(putCookies(plate));
+	}
+
+	
+	
+	public static int putCookies(int plate){
+		
+		int oldNum = plate;
+		
+		while (plate >10){
+			plate +=1;
+			
+		}
+		return plate - oldNum;
+	}
+}

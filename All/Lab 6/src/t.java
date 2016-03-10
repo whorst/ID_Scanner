@@ -1,0 +1,208 @@
+import java.util.Scanner;
+
+import java.util.Scanner;
+
+public class t {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);      
+
+
+char a1 = ' ';
+        char a2 = ' ';
+        char a3 = ' ';
+        char b1 = ' ';
+        char b2 = ' ';
+        char b3 = ' ';
+        char c1 = ' ';
+        char c2 = ' ';
+        char c3 = ' ';
+
+        int counter = 0;
+        String playerMove;
+
+        System.out.printf("%4s|%4s|%4s|", a1, a2, a3);
+        System.out.printf("\n____|____|____");
+        System.out.printf("\n%4s|%4s|%4s|", b1, b2, b3);
+        System.out.printf("\n____|____|____");
+        System.out.printf("\n%4s|%4s|%4s|", c1, c2, c3);
+
+        while (counter < 9) {
+
+            System.out.println("Make a choice!");
+            playerMove = input.next();
+            boolean valid = false;
+            boolean turnA = false;
+
+            while (!valid) {
+                if (playerMove.equals("a1")) {
+                    if (a1 != ' ') {
+                        System.out.println("error");
+                    } else {
+                        if (!turnA) {
+                            a1 = 'X';
+                        }
+                    }
+                    System.out.printf("%4s|%4s|%4s|", a1, a2, a3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", b1, b2, b3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", c1, c2, c3);
+
+                    valid = true;
+
+                    counter++;
+                }
+                if (playerMove.equals("a2")) {
+                    if (a2 != ' ') {
+                        System.out.println("error");
+                    } else {
+                        if (turnA != true) {
+                            a2 = 'O';
+                        }
+                    }
+                    System.out.printf("%4s|%4s|%4s|", a1, a2, a3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", b1, b2, b3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", c1, c2, c3);
+
+                    valid = true;
+
+                    counter++;
+                }
+
+                if (playerMove.equals("a3")) {
+                    if (a3 != ' ') {
+                        System.out.println("error");
+                    } else {
+                        if (!turnA) {
+                            a3 = 'X';
+                        }
+                    }
+                    System.out.printf("%4s|%4s|%4s|", a1, a2, a3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", b1, b2, b3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", c1, c2, c3);
+
+                    valid = true;
+
+                    counter++;
+                }
+
+                if (playerMove.equals("b1")) {
+                    if (b1 != ' ') {
+                        System.out.println("error");
+                    } else {
+                        if (!turnA) {
+                            b1 = 'X';
+                        }
+                    }
+                    System.out.printf("%4s|%4s|%4s|", a1, a2, a3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", b1, b2, b3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", c1, c2, c3);
+
+                    valid = true;
+
+                    counter++;
+                }
+                if (playerMove.equals("b2")) {
+                    if (b2 != ' ') {
+                        System.out.println("error");
+                    } else {
+                        if (turnA != true) {
+                            b2 = 'O';
+                        }
+                    }
+                    System.out.printf("%4s|%4s|%4s|", a1, a2, a3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", b1, b2, b3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", c1, c2, c3);
+
+                    valid = true;
+
+                    counter++;
+                }
+
+                if (playerMove.equals("b3")) {
+                    if (b3 != ' ') {
+                        System.out.println("error");
+                    } else {
+                        if (!turnA) {
+                            b3 = 'X';
+                        }
+                    }
+                    System.out.printf("%4s|%4s|%4s|", a1, a2, a3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", b1, b2, b3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", c1, c2, c3);
+
+                    valid = true;
+
+                    counter++;
+                }
+                if (playerMove.equals("c1")) {
+                    if (c1 != ' ') {
+                        System.out.println("error");
+                    } else {
+                        if (!turnA) {
+                            c1 = 'X';
+                        }
+                    }
+                    System.out.printf("%4s|%4s|%4s|", a1, a2, a3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", b1, b2, b3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", c1, c2, c3);
+
+                    valid = true;
+
+                    counter++;
+                }
+                if (playerMove.equals("c2")) {
+                    if (c2 != ' ') {
+                        System.out.println("error");
+                    } else {
+                        if (turnA != true) {
+                            c2 = 'O';
+                        }
+                    }
+                    System.out.printf("%4s|%4s|%4s|", a1, a2, a3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", b1, b2, b3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", c1, c2, c3);
+
+                    valid = true;
+
+                    counter++;
+                }
+
+                if (playerMove.equals("c3")) {
+                    if (c3 != ' ') {
+                        System.out.println("error");
+                    } else {
+                        if (!turnA) {
+                            c3 = 'X';
+                        }
+                    }
+                    System.out.printf("%4s|%4s|%4s|", a1, a2, a3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", b1, b2, b3);
+                    System.out.printf("\n_____|_____|_____");
+                    System.out.printf("\n%4s|%4s|%4s|", c1, c2, c3);
+
+                    valid = true;
+
+                    counter++;
+                
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+Rob,Summer,300.0,123
+Rob,Summer,300.0,123
+Bob,Winter,400.0,456
+Tom,Spring,500.0,789
+Nina,Fall,500.0,321
+Klaus-Dieter,Maier,5000.0,654

@@ -1,0 +1,57 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.jar.Attributes.Name;
+
+
+public class Main {
+	public static void main(String[] args) throws FileNotFoundException {
+
+		Scanner Sc = new Scanner(System.in);
+		File f1 = new File("nameswithbirthdays.txt");
+		Scanner input = new Scanner(f1);
+
+		BinaryTree theTree = new BinaryTree();		
+
+				while (input.hasNext()){
+					String fName = input.next().trim();
+					String lName = input.next().trim();
+					String date = input.next().trim();			
+					theTree.insertNode(new Node(fName, lName, date));
+				}
+
+
+
+		theTree.insertNode(new Node("Will", "Horst", "1942"));
+		theTree.insertNode(new Node("Chad", "Phillips", "1942"));
+		theTree.insertNode(new Node("Tom", "Ostrom", "1942"));
+
+
+		theTree.printPostorder();
+
+		//System.out.println(theTree.root);
+	
+	theTree.search("Al");	
+	theTree.search("Ben");
+	theTree.search("Beth");	
+	theTree.search("Bonnie");
+	theTree.search("Chad");	
+	theTree.search("Chris");
+	theTree.search("Fred");	
+	theTree.search("Grace");
+	theTree.search("John");	
+	theTree.search("Kevin");
+	theTree.search("Malik");	
+	theTree.search("Pete");
+	theTree.search("Rocky");	
+	theTree.search("Ron");
+	theTree.search("Sharon");	
+	theTree.search("Tim");
+	theTree.search("Tom");	
+	theTree.search("Will");
+	theTree.search("Adolf");
+
+		
+	}
+
+}

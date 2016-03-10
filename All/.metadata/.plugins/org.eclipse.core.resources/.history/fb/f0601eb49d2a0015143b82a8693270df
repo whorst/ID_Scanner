@@ -1,0 +1,95 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.SystemColor;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.FlowLayout;
+import javax.swing.JTextArea;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import javax.swing.JPasswordField;
+import javax.swing.border.LineBorder;
+import javax.swing.JTextPane;
+import javax.swing.JLabel;
+import com.jgoodies.forms.factories.DefaultComponentFactory;
+import java.awt.Panel;
+import javax.swing.JScrollBar;
+
+
+public class GUI {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					GUI window = new GUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public GUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(30, 144, 255));
+		frame.setBounds(100, 100, 1080, 812);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
+		panel_1.setBackground(new Color(255, 255, 255));
+		panel_1.setBounds(111, 22, 825, 740);
+		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblTitle = DefaultComponentFactory.getInstance().createTitle(" Password Keeper\r\n");
+		lblTitle.setFont(new Font("Copperplate Gothic Light", Font.ITALIC, 76));
+		lblTitle.setBounds(10, 45, 805, 65);
+		panel_1.add(lblTitle);
+		
+		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("Copyright 2015");
+		lblNewJgoodiesLabel.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 13));
+		lblNewJgoodiesLabel.setBounds(687, 123, 128, 14);
+		panel_1.add(lblNewJgoodiesLabel);
+		
+		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("A William Horst Invention....");
+		lblNewJgoodiesLabel_1.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 14));
+		lblNewJgoodiesLabel_1.setBounds(10, 11, 367, 23);
+		panel_1.add(lblNewJgoodiesLabel_1);
+		
+		Panel panel = new Panel();
+		panel.setBackground(new Color(0, 0, 0));
+		panel.setBounds(0, 40, 735, 5);
+		panel_1.add(panel);
+		
+		Panel panel_2 = new Panel();
+		panel_2.setBackground(Color.BLACK);
+		panel_2.setBounds(90, 112, 735, 5);
+		panel_1.add(panel_2);
+	}
+}

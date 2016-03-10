@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_Qt5jwHRzEeWc8cnImKEnCg" name="NewModel">
+  <packagedElement xmi:type="uml:Class" xmi:id="_hKWvIHRzEeWc8cnImKEnCg" name="SoundElement">
+    <ownedAttribute xmi:id="_CTq5YHR0EeWc8cnImKEnCg" name="soundElement">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CTrgcHR0EeWc8cnImKEnCg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CTsHgHR0EeWc8cnImKEnCg" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3GcL8HRzEeWc8cnImKEnCg" name="SoundTest"/>
+</uml:Model>

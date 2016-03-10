@@ -1,0 +1,19 @@
+import java.io.File;
+import java.util.Scanner;
+
+
+public class GroceryList {
+
+	public static void main(String[] args) {
+		
+		ArrayL obj1= new ArrayL();
+		
+		
+		obj1.setLogsize(-1);
+		obj1.setPhysize(20);
+
+	}
+File f1 = new File(grocerylist.txt);
+Scanner input = new Scanner (f1).useDelimiter("[,\n\r]t");
+	
+}

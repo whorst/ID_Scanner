@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+
+public class Ch6 {
+	public static void main(String[] args){
+
+		String s4 = "Java" + "Code" + "Geeks";
+			 
+			        // hold the reference of s4
+			        String s1 = " " + "are awesome!";
+			 
+			        s1 += s1;
+		 
+			        System.out.println(s1);
+			 
+			        System.out.println(s1 == s4);
+	}}

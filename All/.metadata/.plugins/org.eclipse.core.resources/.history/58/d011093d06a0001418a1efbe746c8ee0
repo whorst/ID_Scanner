@@ -1,0 +1,29 @@
+
+public class ArrayL {
+	
+	private final int Physize = 20;
+
+	private int Logsize = -1;
+	
+	private String[] myArray = new String [Physize];
+
+	
+	public int getLogsize() {
+	return Logsize;
+}
+	public void setLogsize(int logsize) {
+		this.Logsize = logsize;
+	}
+	public int Physize() {
+	return Physize;
+}
+	public void setPhysize(int Physize) {
+		
+	}
+	public String[] myArray() {
+		return myArray;
+	}
+		public void myArray(String[] myArray) {
+			this.myArray = myArray;
+		}	
+}

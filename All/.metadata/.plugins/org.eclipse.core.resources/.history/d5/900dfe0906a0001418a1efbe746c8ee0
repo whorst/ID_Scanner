@@ -1,0 +1,28 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+
+public class GroceryList {
+
+	public static void main(String[] args) throws FileNotFoundException{
+		
+		ArrayL obj1= new ArrayL();
+		
+		
+		obj1.setLogsize(-1);
+		obj1.setPhysize(20);
+		obj1.myArray();
+		
+		File f1 = new File("grocerylist1.txt");
+		Scanner input = new Scanner (f1).useDelimiter("[,\n\r]t");
+		
+		String word2;
+		while(input.hasNext());{
+			word2=input.next();
+			System.out.println("word2");
+		}
+	}
+
+	
+}

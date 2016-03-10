@@ -1,0 +1,14 @@
+package bin;
+
+import javax.swing.JApplet;
+
+public class gui extends JApplet {
+
+	/**
+	 * Create the applet.
+	 */
+	public gui() {
+
+	}
+
+}

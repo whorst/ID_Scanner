@@ -1,0 +1,270 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
+import javafx.application.*;
+import javafx.stage.*;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.event.*;
+import javafx.geometry.Pos;
+
+
+
+public class calc extends Application {
+
+
+	Button oneBtn = new Button("1");
+	Button twoBtn = new Button("2");
+	Button threeBtn = new Button("3");
+	Button fourBtn = new Button("4");
+	Button fiveBtn = new Button("5");
+	Button sixBtn = new Button("6");
+	Button sevenBtn = new Button("7");
+	Button eightBtn = new Button("8");
+	Button nineBtn = new Button("9");
+	Button zeroBtn = new Button("0");
+	Button CBtn = new Button("C");
+	Button equalBtn = new Button("=");
+	Button addBtn = new Button("+");
+	Button minusBtn = new Button("-");
+	Button multiBtn = new Button("*");
+	Button divideBtn = new Button("/");
+
+	TextField tf1 = new TextField();
+	
+	
+	static int addition = 0, subtract = 0, multiplication = 0, division = 0;
+	static int clearAll;
+	static double first, second, third, jAnswer;
+
+	Queue<String> myQueue = new LinkedList<String>();
+	
+	public static void main(String[] args) {
+
+		System.out.println("hi");
+		launch(args);
+		
+		
+
+	}
+
+	public void start(Stage primaryStage) throws Exception {
+		
+		
+		
+		
+		TextField tf2 = new TextField();
+		Button b1 = new Button();
+		
+		
+		
+		tf1.setMinHeight(50);
+		tf1.setMinWidth(150);
+		
+		oneBtn.setMinWidth(50);
+		oneBtn.setMinHeight(50);
+		
+		twoBtn.setMinWidth(50);
+		twoBtn.setMinHeight(50);
+		
+		threeBtn.setMinWidth(50);
+		threeBtn.setMinHeight(50);
+
+
+		fourBtn.setMinWidth(50);
+		fourBtn.setMinHeight(50);
+		
+		fiveBtn.setMinWidth(50);
+		fiveBtn.setMinHeight(50);
+
+		sixBtn.setMinWidth(50);
+		sixBtn.setMinHeight(50);
+		
+		sevenBtn.setMinWidth(50);
+		sevenBtn.setMinHeight(50);
+		
+		eightBtn.setMinWidth(50);
+		eightBtn.setMinHeight(50);
+
+		nineBtn.setMinWidth(50);
+		nineBtn.setMinHeight(50);
+
+		zeroBtn.setMinWidth(50);
+		zeroBtn.setMinHeight(50);
+		
+		CBtn.setMinWidth(50);
+		CBtn.setMinHeight(50);
+		
+		minusBtn.setMinWidth(50);
+		minusBtn.setMinHeight(50);
+		
+		addBtn.setMinWidth(50);
+		addBtn.setMinHeight(50);
+		
+		multiBtn.setMinWidth(50);
+		multiBtn.setMinHeight(50);
+		
+		divideBtn.setMinWidth(50);
+		divideBtn.setMinHeight(50);
+		
+		equalBtn.setMinWidth(50);
+		equalBtn.setMinHeight(50);
+		
+		
+		GridPane pane = new GridPane();
+		BorderPane pane2 = new BorderPane();
+		pane2.setCenter(pane);
+		pane2.setTop(tf1);
+		
+		
+		
+		pane.add(oneBtn,1,1);
+		pane.add(fourBtn,1,2);
+		pane.add(sevenBtn,1,3);
+		pane.add(CBtn,1,4);
+		pane.add(twoBtn,2,1);
+		pane.add(fiveBtn,2,2);
+		pane.add(eightBtn,2,3);
+		pane.add(zeroBtn,2,4);
+		pane.add(threeBtn,3,1);
+		pane.add(sixBtn,3,2);
+		pane.add(nineBtn,3,3);
+		pane.add(equalBtn,3,4);
+		pane.add(addBtn,4,1);
+		pane.add(minusBtn,4,2);
+		pane.add(multiBtn,4,3);
+		pane.add(divideBtn,4,4);
+		Scene scene = new Scene(pane2);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+		
+		//tf1.setEditable(false);
+		primaryStage.setResizable(false);
+		primaryStage.sizeToScene();
+		
+		tf1.setAlignment(Pos.CENTER_RIGHT);
+		
+	
+		
+		
+		oneBtn.setOnAction(e -> setNum(tf1 ,"1"));
+		twoBtn.setOnAction(e -> setNum(tf1 ,"2"));
+		threeBtn.setOnAction(e -> setNum(tf1 ,"3"));
+		fourBtn.setOnAction(e -> setNum(tf1 ,"4"));
+		fiveBtn.setOnAction(e -> setNum(tf1 ,"5"));
+		sixBtn.setOnAction(e -> setNum(tf1 ,"6"));
+		sevenBtn.setOnAction(e -> setNum(tf1 ,"7"));
+		eightBtn.setOnAction(e -> setNum(tf1 ,"8"));
+		nineBtn.setOnAction(e -> setNum(tf1 ,"9"));
+		zeroBtn.setOnAction(e -> setNum(tf1 ,"0"));
+		
+		CBtn.setOnAction(e -> clearCalc());
+		
+		addBtn.setOnAction(e -> logic(addBtn));
+		minusBtn.setOnAction(e -> logic(minusBtn));
+		multiBtn.setOnAction(e -> logic(multiBtn));
+		divideBtn.setOnAction(e -> logic(divideBtn));
+		equalBtn.setOnAction(e -> equal());
+	
+
+		
+	}
+	
+
+	public void setNum( TextField t ,String f) {
+		if (tf1.getText().length() < 16) {
+			if (clearAll == 1) {
+				tf1.setText(f);
+				clearAll = 0;
+			} else {
+				tf1.setText(tf1.getText() + f);
+			}
+		}
+
+	}
+	
+	
+	public void clearCalc(){
+		
+		tf1.clear();
+		
+		addition = 0;
+		subtract = 0;
+		multiplication = 0;
+		division = 0;
+		first = 0;
+		second = 0;
+		
+	}
+	public void logic(Button btn){
+		if (btn.equals(addBtn)){
+			if (tf1.getText() != null) 
+				first = Double.parseDouble(String.valueOf(tf1.getText())); // parse
+			addition = 1; 
+			clearAll = 1;
+			
+		}
+		if (btn.equals(minusBtn)){
+			if (tf1.getText() != null)
+				first = Double.parseDouble(String.valueOf(tf1.getText()));
+			subtract = 1;
+			clearAll = 1;
+			
+		}
+		if (btn.equals(divideBtn)){
+			if (tf1.getText() != null)
+				first = Double.parseDouble(String.valueOf(tf1.getText()));
+			division = 1;
+			clearAll = 1;
+			
+		}
+		if (btn.equals(multiBtn)){
+			if (tf1.getText() != null)
+				first = Double.parseDouble(String.valueOf(tf1.getText()));
+			multiplication = 1;
+			clearAll = 1;
+			
+		}
+	
+	}
+	
+	
+	public void equal(){
+		second = Double.parseDouble(String.valueOf(tf1.getText()));
+		tf1.setText(tf1.getText());
+		if (addition == 1) {
+			jAnswer = first + second;
+			tf1.setText(String.valueOf(jAnswer));
+			addition = 0;
+		}
+
+		if (subtract == 1) {
+			jAnswer = first - second;
+			tf1.setText(String.valueOf(jAnswer));
+			subtract = 0;
+		}
+
+		if (multiplication == 1) {
+			jAnswer = first * second;
+			tf1.setText(String.valueOf(jAnswer));
+			multiplication = 0;
+		}
+
+		if (division == 1) {
+			if (second == 0) {
+				tf1.setText("Can't Divide by 0");
+				division = 0;
+			} else {
+				jAnswer = first / second;
+				tf1.setText(String.valueOf(jAnswer));
+				division = 0;
+			}
+		}
+	}
+	
+	
+	
+
+}

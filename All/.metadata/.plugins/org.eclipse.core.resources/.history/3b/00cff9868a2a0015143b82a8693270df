@@ -1,0 +1,78 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.SystemColor;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.FlowLayout;
+import javax.swing.JTextArea;
+import java.awt.Font;
+
+
+public class GUI {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					GUI window = new GUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public GUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(255, 215, 0));
+		frame.setBounds(100, 100, 1080, 812);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 0, 0);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(0, 0, 0, 0);
+		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(220, 20, 60));
+		panel_2.setBounds(0, 11, 1064, 762);
+		frame.getContentPane().add(panel_2);
+		panel_2.setLayout(null);
+		
+		JTextArea txtrThisIsMy = new JTextArea();
+		txtrThisIsMy.setFont(new Font("Times New Roman", Font.PLAIN, 52));
+		txtrThisIsMy.setText("This is my Window Builder Text");
+		txtrThisIsMy.setWrapStyleWord(true);
+		txtrThisIsMy.setBackground(new Color(220, 20, 60));
+		txtrThisIsMy.setBounds(70, 11, 748, 65);
+		panel_2.add(txtrThisIsMy);
+	}
+}
